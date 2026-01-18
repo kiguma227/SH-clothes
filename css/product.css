@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+header {
+    width: 100%;
+    background-color: oklch(87.1% 0.15 154.449);
+    padding: 16px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+header .left {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+header h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+header .nav {
+    display: flex;
+    gap: 24px;
+}
+
+header .nav a {
+    color: #555;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+}
+
+header .nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: oklch(71.4% 0.203 305.504);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+header .nav a:hover::after {
+    transform: scaleX(1);
+}
+
+header .nav a:hover {
+    color: oklch(71.4% 0.203 305.504);
+}
+
+main {
+    margin: 80px auto 0;
+    width: 90%;
+    max-width: 1200px;
+    padding: 40px 0;
+}
+
+.product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    background-color: oklch(92.5% 0.084 155.995);
+    padding: 32px;
+    border-radius: 8px;
+}
+
+.product-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap:5px;
+}
+
+.product-image img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.product-info h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.brand {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 16px;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: bold;
+    color: oklch(62.7% 0.194 149.214);
+    margin-bottom: 32px;
+}
+
+.product-description {
+    margin-bottom: 32px;
+}
+
+.product-description h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.product-description p {
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.product-details {
+    margin-bottom: 32px;
+}
+
+.product-details h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.product-details ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.product-details li {
+    padding: 8px 0;
+    color: #666;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-details li:last-child {
+    border-bottom: none;
+}
+
+.product-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: oklch(62.7% 0.194 149.214);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: oklch(52.213% 0.13366 150.124);
+}
+
+.back-link {
+    display: inline-block;
+    padding: 16px;
+    background-color: oklch(55.4% 0.046 257.417);
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.back-link:hover {
+    background-color: oklch(27.9% 0.041 260.031);
+}
+
+footer {
+    background-color: oklch(27.8% 0.033 256.848);
+    color: white;
+    text-align: center;
+    padding: 24px 0;
+    margin-top: 32px;
+}
+
+footer p {
+    margin-bottom: 16px;
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+footer a {
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* Responsive */
+/* Планшет (900px) */
+@media (max-width: 900px) {
+    main {
+        width: 95%;
+    }
+
+    .product-detail {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 24px;
+    }
+
+    .product-image img {
+        max-width: 350px;
+    }
+
+    .product-info h1 {
+        font-size: 28px;
+    }
+
+    .price {
+        font-size: 24px;
+    }
+
+    .product-description h3,
+    .product-details h3 {
+        font-size: 18px;
+    }
+}
+
+/* Мобільний (600px) */
+@media (max-width: 600px) {
+    header {
+        padding: 12px 0;
+    }
+
+    header .left {
+        gap: 16px;
+    }
+
+    header h2 {
+        font-size: 20px;
+    }
+
+    header .nav {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    header .nav a {
+        font-size: 14px;
+    }
+
+    main {
+        width: 100%;
+        padding: 20px 0;
+        margin: 70px auto 0;
+    }
+
+    .product-detail {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 16px;
+    }
+
+    .product-image img {
+        max-width: 280px;
+        width: 100%;
+    }
+
+    .product-info h1 {
+        font-size: 24px;
+        margin-bottom: 4px;
+    }
+
+    .brand {
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+    .price {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+
+    .product-description h3,
+    .product-details h3 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .product-description p {
+        font-size: 14px;
+    }
+
+    .product-details li {
+        font-size: 14px;
+        padding: 6px 0;
+    }
+
+    .add-to-cart-btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    .back-link {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    footer {
+        padding: 16px 0;
+    }
+
+    footer p {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    footer nav {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    footer a {
+        font-size: 12px;
+    }
+}
