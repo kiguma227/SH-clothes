@@ -13,7 +13,7 @@ body{
 	align-items: center;
 	flex-direction: column;
 
-    background-image: url("/img/bg_photo.avif");
+    background-image: url("img/bg_photo.avif");
     background-size: contain;
     background-color: oklch(87.1% 0.15 154.449); 
     background-repeat: no-repeat;
@@ -54,4 +54,5 @@ a{
 
 a:hover{
     background-color: oklch(54.8% 0.119 151.328);
+
 }
