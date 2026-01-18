@@ -33,6 +33,7 @@ main {
 .hero-image {
     position: relative;
     height: 100%;
+    background-image: url("../img/bg_photo.avif");
 }
 
 .hero-content {
@@ -374,3 +375,4 @@ footer a:hover {
         font-size: 16px;
     }
 }
+
